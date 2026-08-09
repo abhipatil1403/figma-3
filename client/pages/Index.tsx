@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Menu, X, Home, CircleHelp, Tag, Contact, Info, BriefcaseBusiness, ShieldCheck, Search } from "lucide-react";
+import { Menu, X, Home, CircleHelp, Tag, Contact, Info, BriefcaseBusiness, Settings, Search } from "lucide-react";
 
 const BLUE = "#4356d6";
 const navItems = [
@@ -103,19 +103,29 @@ function Hero() {
 }
 
 const benefits = [
-  { title: "Regulatory Clarity", text: "We decode complex compliance rules into simple, actionable steps.", icon: Search },
-  { title: "Hassle-Free Filings Clarity", text: "From registration to ongoing reporting—we manage it end-to-end.", icon: BriefcaseBusiness },
-  { title: "Risk Protection", text: "Stay ahead of audits, inspections, and compliance gaps with proactive support.", icon: ShieldCheck },
+  { title: "Regulatory Clarity", text: "We decode complex compliance rules into simple, actionable steps.", icon: Search, round: true },
+  { title: "Hassle-Free Filings Clarity", text: "From registration to ongoing reporting—we manage it end-to-end.", icon: Info, round: false },
+  { title: "Risk Protection", text: "Stay ahead of audits, inspections, and compliance gaps with proactive support.", icon: Settings, round: false },
 ];
 
-function BenefitCard({ title, text, icon: Icon }: (typeof benefits)[number]) {
-  return <article className="benefit-card"><Icon className="benefit-icon" size={36} /><div><h3>{title}</h3><p>{text}</p></div></article>;
+function BenefitCard({ title, text, icon: Icon, round }: (typeof benefits)[number]) {
+  return <article className="benefit-card">
+    <span className={`benefit-icon-wrap${round ? " round" : ""}`}><Icon size={20} color="#fff" /></span>
+    <div><h3>{title}</h3><p>{text}</p></div>
+  </article>;
 }
 
 function WhyCompliance() {
   return <section id="about-us" className="why-section">
-    <div className="why-intro"><h2>Why <span>Compliance Matters</span> for Research Analysts</h2><p>In today’s regulatory environment, even a small oversight can lead to penalties, reputational risks, and loss of client trust. We help Research Analysts and firms navigate complex compliance requirements so they can focus on delivering high-quality research without worry.</p></div>
+    <div className="why-intro">
+      <div className="why-title">
+        <h2>Why <span>Compliance Matters</span> for Research Analysts</h2>
+        <img className="why-squiggle" aria-hidden="true" src="https://api.builder.io/api/v1/image/assets/TEMP/a9cec602d18aa8792771e2e4bcf4eafc29ba4e0d?width=205" alt="" />
+      </div>
+      <p>In today’s regulatory environment, even a small oversight can lead to penalties, reputational risks, and loss of client trust. We help Research Analysts and firms navigate complex compliance requirements so they can focus on delivering high-quality research without worry.</p>
+    </div>
     <div className="why-content"><img className="why-art" src="https://api.builder.io/api/v1/image/assets/TEMP/995a3c722f98afe98ea5145aa77c354118009ae7?width=1188" alt="Analyst reviewing a compliance dashboard" /><div className="benefits">{benefits.map((benefit) => <BenefitCard key={benefit.title} {...benefit} />)}</div></div>
+    <img className="why-arrows" aria-hidden="true" src="https://api.builder.io/api/v1/image/assets/TEMP/b64e140ff900adb10a58fe1452ee886ad8be3b88?width=275" alt="" />
   </section>;
 }
 

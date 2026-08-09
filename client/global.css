@@ -36,15 +36,19 @@ a { color: inherit; text-decoration: none; }
 .hero-blob { position: absolute; top: 50%; left: 50%; width: 132%; max-width: none; transform: translate(-50%, -50%); z-index: 0; pointer-events: none; }
 .hero-art { position: relative; z-index: 1; width: 100%; display: block; }
 
-.why-section { padding: 50px max(24px, calc((100vw - 1240px) / 2)); background: #fff; overflow: hidden; }
+.why-section { position: relative; width: 100%; max-width: 1440px; margin: 0 auto; padding: 50px max(24px, calc((100% - 1240px) / 2)); background: #fff; overflow: hidden; }
 .why-intro { display: grid; grid-template-columns: 1fr 1fr; gap: 33px; align-items: center; margin-bottom: 36px; }
-.why-section h2 { margin: 0; font-size: clamp(38px, 3.35vw, 48px); line-height: 1.4583; font-weight: 600; text-transform: capitalize; }
+.why-title { position: relative; }
+.why-section h2 { margin: 0; font-size: clamp(38px, 3.35vw, 48px); line-height: 70px; font-weight: 600; text-transform: capitalize; }
+.why-squiggle { position: absolute; width: 102px; height: 89px; object-fit: contain; top: 140px; left: max(24px, calc((100% - 1240px) / 2 + 445px)); transform: rotate(-53.406deg); }
 .why-section p { margin: 0; font-size: 18px; line-height: 32px; text-transform: capitalize; }
-.why-content { display: grid; grid-template-columns: 1fr 1fr; gap: 52px; align-items: center; }
-.why-art { width: 100%; }
+.why-content { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 52px; align-items: center; }
+.why-art { display: block; width: 100%; aspect-ratio: 1; object-fit: contain; }
+.why-arrows { position: absolute; width: 137px; height: 34px; left: 0; top: 803px; object-fit: contain; }
 .benefits { display: flex; flex-direction: column; gap: 40px; }
 .benefit-card { display: flex; gap: 26px; padding: 20px; min-height: 142px; border: 1px solid #e2e7ff; border-radius: 8px; background: #fafbff; }
-.benefit-icon { flex: 0 0 36px; color: #4356d6; stroke-width: 2; }
+.benefit-icon-wrap { flex: 0 0 36px; width: 36px; height: 36px; display: flex; align-items: center; justify-content: center; border-radius: 8px; background: #4356d6; }
+.benefit-icon-wrap.round { border-radius: 50%; }
 .benefit-card h3 { margin: 0 0 11px; font-size: 24px; line-height: 32px; font-weight: 600; text-transform: capitalize; }
 .benefit-card p { font-size: 18px; line-height: 32px; }
 .drawer-overlay { position: fixed; inset: 0; z-index: 20; background: rgba(0,0,0,.7); }
@@ -57,4 +61,4 @@ a { color: inherit; text-decoration: none; }
 .drawer-contact { width: 100%; margin-top: 25px; }
 
 @media (max-width: 1100px) { .desktop-nav { gap: 6px; } .site-header { padding-inline: 32px; } .hero { grid-template-columns: 1fr; text-align: center; padding-top: 50px; } .hero-copy { max-width: 636px; margin: 0 auto; } .hero h1, .hero p { margin-inline: auto; } .scribble { left: 50%; transform: translateX(-50%); } .hero ul { width: fit-content; margin-inline: auto; text-align: left; } .hero-actions { justify-content: center; } .hero-art-wrap { max-width: 636px; justify-self: center; } }
-@media (max-width: 767px) { .site-header { height: 55px; padding: 8px 16px; background: #fafbff; } .site-header > .flex { transform: scale(.76); transform-origin: left center; } .desktop-nav, .header-contact { display: none; } .menu-button { display: block; margin-left: auto; } .hero { display: flex; min-height: 0; padding: 26px 16px 50px; flex-direction: column; gap: 0; background: #fafbff; } .hero-copy { width: 100%; } .hero h1 { font-size: 38px; line-height: 48px; margin-bottom: 26px; } .scribble { display: none; } .hero p { font-size: 18px; line-height: 32px; } .hero ul { width: 100%; max-width: 315px; margin-top: 5px; margin-bottom: 24px; font-size: 16px; line-height: 26px; } .hero li { align-items: flex-start; } .hero-actions { flex-direction: column; gap: 10px; } .primary-button, .secondary-button { width: 100%; } .hero-art-wrap { display: none; } .why-section { padding: 50px 16px; } .why-intro { display: flex; flex-direction: column; gap: 26px; margin-bottom: 26px; text-align: center; } .why-section h2 { font-size: 34px; line-height: 48px; } .why-section p { font-size: 16px; line-height: 28px; } .why-content { display: flex; flex-direction: column; gap: 26px; } .why-art { width: 100%; } .benefits { width: 100%; gap: 26px; } .benefit-card { min-height: 0; padding: 20px; gap: 16px; } .benefit-card h3 { font-size: 18px; line-height: 24px; margin-bottom: 9px; } .benefit-card p { font-size: 16px; line-height: 28px; } .benefit-icon { width: 24px; height: 24px; flex-basis: 24px; } }
+@media (max-width: 767px) { .site-header { height: 55px; padding: 8px 16px; background: #fafbff; } .site-header > .flex { transform: scale(.76); transform-origin: left center; } .desktop-nav, .header-contact { display: none; } .menu-button { display: block; margin-left: auto; } .hero { display: flex; min-height: 0; padding: 26px 16px 50px; flex-direction: column; gap: 0; background: #fafbff; } .hero-copy { width: 100%; } .hero h1 { font-size: 38px; line-height: 48px; margin-bottom: 26px; } .scribble { display: none; } .hero p { font-size: 18px; line-height: 32px; } .hero ul { width: 100%; max-width: 315px; margin-top: 5px; margin-bottom: 24px; font-size: 16px; line-height: 26px; } .hero li { align-items: flex-start; } .hero-actions { flex-direction: column; gap: 10px; } .primary-button, .secondary-button { width: 100%; } .hero-art-wrap { display: none; } .why-section { padding: 50px 16px; } .why-intro { display: flex; flex-direction: column; gap: 26px; margin-bottom: 26px; text-align: center; } .why-section h2 { font-size: 34px; line-height: 48px; } .why-section p { font-size: 16px; line-height: 28px; } .why-content { display: flex; flex-direction: column; gap: 26px; } .why-art { width: 100%; } .benefits { width: 100%; gap: 26px; } .benefit-card { min-height: 0; padding: 20px; gap: 16px; } .benefit-card h3 { font-size: 18px; line-height: 24px; margin-bottom: 9px; } .benefit-card p { font-size: 16px; line-height: 28px; } .benefit-icon-wrap { width: 28px; height: 28px; flex-basis: 28px; } .why-squiggle, .why-arrows { display: none; } }
