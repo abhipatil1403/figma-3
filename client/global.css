@@ -36,15 +36,15 @@ a { color: inherit; text-decoration: none; }
 .hero-blob { position: absolute; top: 50%; left: 50%; width: 132%; max-width: none; transform: translate(-50%, -50%); z-index: 0; pointer-events: none; }
 .hero-art { position: relative; z-index: 1; width: 100%; display: block; }
 
-.why-section { position: relative; padding: 50px max(24px, calc((100vw - 1240px) / 2)); background: #fff; overflow: hidden; }
+.why-section { position: relative; width: 100%; max-width: 1440px; margin: 0 auto; padding: 50px max(24px, calc((100% - 1240px) / 2)); background: #fff; overflow: hidden; }
 .why-intro { display: grid; grid-template-columns: 1fr 1fr; gap: 33px; align-items: center; margin-bottom: 36px; }
 .why-title { position: relative; }
-.why-section h2 { margin: 0; font-size: clamp(38px, 3.35vw, 48px); line-height: 1.4583; font-weight: 600; text-transform: capitalize; }
-.why-squiggle { position: absolute; top: -18px; right: -70px; }
+.why-section h2 { margin: 0; font-size: clamp(38px, 3.35vw, 48px); line-height: 70px; font-weight: 600; text-transform: capitalize; }
+.why-squiggle { position: absolute; width: 102px; height: 89px; object-fit: contain; top: 140px; left: max(24px, calc((100% - 1240px) / 2 + 445px)); transform: rotate(-53.406deg); }
 .why-section p { margin: 0; font-size: 18px; line-height: 32px; text-transform: capitalize; }
-.why-content { display: grid; grid-template-columns: 1fr 1fr; gap: 52px; align-items: center; }
-.why-art { width: 100%; }
-.why-arrows { position: absolute; left: max(24px, calc((100vw - 1240px) / 2)); bottom: 24px; }
+.why-content { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 52px; align-items: center; }
+.why-art { display: block; width: 100%; aspect-ratio: 1; object-fit: contain; }
+.why-arrows { position: absolute; width: 137px; height: 34px; left: 0; bottom: 24px; object-fit: contain; }
 .benefits { display: flex; flex-direction: column; gap: 40px; }
 .benefit-card { display: flex; gap: 26px; padding: 20px; min-height: 142px; border: 1px solid #e2e7ff; border-radius: 8px; background: #fafbff; }
 .benefit-icon-wrap { flex: 0 0 36px; width: 36px; height: 36px; display: flex; align-items: center; justify-content: center; border-radius: 8px; background: #4356d6; }

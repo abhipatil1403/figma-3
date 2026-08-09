@@ -120,17 +120,12 @@ function WhyCompliance() {
     <div className="why-intro">
       <div className="why-title">
         <h2>Why <span>Compliance Matters</span> for Research Analysts</h2>
-        <svg className="why-squiggle" aria-hidden="true" width="103" height="89" viewBox="0 0 103 89" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path d="M62.6 0.5C74 12 82.5 26 82.5 44.5c0 15-6.5 27-16 34.5" stroke="#B2C0FE" strokeWidth="6" strokeLinecap="round" fill="none"/>
-          <path d="M52 68l14 11 11-15" stroke="#B2C0FE" strokeWidth="6" strokeLinecap="round" strokeLinejoin="round" fill="none"/>
-        </svg>
+        <img className="why-squiggle" aria-hidden="true" src="https://api.builder.io/api/v1/image/assets/TEMP/a9cec602d18aa8792771e2e4bcf4eafc29ba4e0d?width=205" alt="" />
       </div>
       <p>In today’s regulatory environment, even a small oversight can lead to penalties, reputational risks, and loss of client trust. We help Research Analysts and firms navigate complex compliance requirements so they can focus on delivering high-quality research without worry.</p>
     </div>
     <div className="why-content"><img className="why-art" src="https://api.builder.io/api/v1/image/assets/TEMP/995a3c722f98afe98ea5145aa77c354118009ae7?width=1188" alt="Analyst reviewing a compliance dashboard" /><div className="benefits">{benefits.map((benefit) => <BenefitCard key={benefit.title} {...benefit} />)}</div></div>
-    <svg className="why-arrows" aria-hidden="true" width="137" height="34" viewBox="0 0 137 34" fill="none" xmlns="http://www.w3.org/2000/svg">
-      {[0, 22, 44, 66, 88, 110].map((x) => <path key={x} d={`M${x} 4l13 13-13 13`} stroke="#B2C0FE" strokeWidth="6" strokeLinecap="round" strokeLinejoin="round" fill="none"/>)}
-    </svg>
+    <img className="why-arrows" aria-hidden="true" src="https://api.builder.io/api/v1/image/assets/TEMP/b64e140ff900adb10a58fe1452ee886ad8be3b88?width=275" alt="" />
   </section>;
 }
 
